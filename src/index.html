@@ -12,16 +12,35 @@
       <h1>Meme Generator</h1>
     </header>
     <main>
-      <div>
-        <label for="image-input">Select an image: </label>
-        <input type="file" id="image-input" accept="image/*" />
-        <label for="top-text-input">Top text: </label>
+      <form>
+        <label for="image-input">Select an image:</label>
+        <div>
+          <input type="file" id="image-input" accept="image/*" />
+        </div>
+        <div>
+          <label for="top-text-input">Top text:</label>
+          <div>
+            <input type="color" />
+            <input type="color" value="#ffffff" />
+          </div>
+        </div>
         <input type="text" id="top-text-input" />
-        <label for="bottom-text-input">Bottom text: </label>
+        <div>
+          <label for="bottom-text-input">Bottom text:</label>
+          <div>
+            <input type="color" />
+            <input type="color" value="#ffffff" />
+          </div>
+        </div>
         <input type="text" id="bottom-text-input" />
-      </div>
+      </form>
       <canvas></canvas>
     </main>
+    <div class="github-logo-container" title="GitHub Page">
+      <a href="https://github.com/limapaulobsb/meme-generator" target="_blank">
+        <img src="./assets/Octocat.png" alt="GitHub Logo" />
+      </a>
+    </div>
   </body>
   <script src="./script.js"></script>
 </html>

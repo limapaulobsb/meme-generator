@@ -13,7 +13,7 @@ body {
 }
 
 canvas {
-  margin-top: 40px;
+  margin: 40px 0;
 }
 
 header {
@@ -22,17 +22,22 @@ header {
   text-align: center;
 }
 
-
-input {
+input[type='file'],
+input[type='text'] {
   font-family: inherit;
   width: 300px;
 }
 
-label {
-  font-size: 1.5rem;
-  margin: 20px 0 10px;
+input[type='color'] {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 25px;
 }
 
+label {
+  font-size: 1.5rem;
+}
 
 main {
   align-items: center;
@@ -40,8 +45,41 @@ main {
   flex-direction: column;
 }
 
-main > div {
+form {
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+form > div {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 5px;
+  width: 100%;
+}
+
+.github-logo-container {
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 rgba(0 0 0 / 25%);
+  cursor: pointer;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  left: 20px;
+  position: fixed;
+  top: 25px;
+  transition: top 0.2s ease;
+  width: 60px;
+}
+
+.github-logo-container:hover {
+  box-shadow: 0 0 4px 0 rgba(0 0 0 / 50%);
+  top: 20px;
+}
+
+.github-logo-container img {
+  width: 40px;
 }
