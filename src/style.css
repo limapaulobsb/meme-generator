@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to bottom, white, rgb(210 210 255));
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+}
+
+canvas {
+  margin-top: 40px;
+}
+
+header {
+  font-size: 1.5rem;
+  padding: 40px 0 60px;
+  text-align: center;
+}
+
+
+input {
+  font-family: inherit;
+  width: 300px;
+}
+
+label {
+  font-size: 1.5rem;
+  margin: 20px 0 10px;
+}
+
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+main > div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
