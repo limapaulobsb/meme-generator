@@ -8,24 +8,19 @@
 
 body {
   background-image: linear-gradient(to bottom, white, rgb(210 210 255));
+  color: rgb(30 30 30);
   font-family: 'Lato', sans-serif;
   min-height: 100vh;
 }
 
 canvas {
-  margin: 40px 0;
+  margin: 40px 0 10px;
 }
 
 header {
   font-size: 1.5rem;
   padding: 40px 0 60px;
   text-align: center;
-}
-
-input[type='file'],
-input[type='text'] {
-  font-family: inherit;
-  width: 300px;
 }
 
 input[type='color'] {
@@ -35,8 +30,31 @@ input[type='color'] {
   width: 25px;
 }
 
+input[type='file'] {
+  display: none;
+}
+
+input[type='text'] {
+  border: 1px solid black;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 1rem;
+  height: 30px;
+  padding: 0 5px;
+  width: 100%;
+}
+
 label {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+}
+
+label.pseudo-button {
+  border: 1px solid black;
+  border-radius: 2px;
+  cursor: pointer;
+  justify-self: center;
+  margin-bottom: 20px;
+  padding: 5px 10px;
 }
 
 main {
@@ -47,8 +65,12 @@ main {
 
 form {
   align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 0 rgba(0 0 0 / 20%);
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 form > div {
@@ -59,11 +81,34 @@ form > div {
   width: 100%;
 }
 
+form > div:first-child {
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0;
+}
+
+span {
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.example-image {
+  cursor: pointer;
+  height: 60px;
+  margin-right: 2px;
+  object-fit: cover;
+  width: 80px;
+}
+
+.example-image:last-child {
+  margin-right: 0;
+}
+
 .github-logo-container {
   align-items: center;
   background-color: white;
   border-radius: 50%;
-  box-shadow: 0 0 4px 0 rgba(0 0 0 / 25%);
+  box-shadow: 0 0 4px 0 rgba(0 0 0 / 20%);
   cursor: pointer;
   display: flex;
   height: 60px;
@@ -76,7 +121,7 @@ form > div {
 }
 
 .github-logo-container:hover {
-  box-shadow: 0 0 4px 0 rgba(0 0 0 / 50%);
+  box-shadow: 0 0 4px 0 rgba(0 0 0 / 40%);
   top: 20px;
 }
 
