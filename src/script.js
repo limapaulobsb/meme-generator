@@ -4,10 +4,10 @@
 // =====> Start Global Variables <=====
 
 const imageInput = document.getElementById('image-input');
-const topTextInput = document.getElementById('top-text-input');
-const bottomTextInput = document.getElementById('bottom-text-input');
 const exampleImages = document.querySelectorAll('.example-image');
 const colorInputs = document.querySelectorAll('input[type="color"]');
+const topTextInput = document.getElementById('top-text-input');
+const bottomTextInput = document.getElementById('bottom-text-input');
 const canvasElement = document.querySelector('canvas');
 const ctx = canvasElement.getContext('2d');
 
@@ -64,17 +64,17 @@ window.onload = () => {
     loadImage(source);
   });
 
-  topTextInput.addEventListener('input', updateCanvas);
-  bottomTextInput.addEventListener('input', updateCanvas);
-
   exampleImages.forEach((el) => {
     el.addEventListener('click', () => loadImage(el.src));
+
     el.addEventListener('keyup', ({ key }) => {
       if (key === 'Enter') loadImage(el.src);
     });
   });
 
   colorInputs.forEach((el) => el.addEventListener('input', updateCanvas));
+  topTextInput.addEventListener('input', updateCanvas);
+  bottomTextInput.addEventListener('input', updateCanvas);
 };
 
 // =====> End Onload Events and Listeners setup <=====
