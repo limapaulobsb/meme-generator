@@ -2,21 +2,19 @@
 // https://www.youtube.com/watch?v=io5FcMAdLyQ
 
 // =====> Start Global Variables <=====
+let imageElement;
 
-const imageInput = document.getElementById('image-input');
-const exampleImages = document.querySelectorAll('.example-image');
 const colorInputs = document.querySelectorAll('input[type="color"]');
 const topTextInput = document.getElementById('top-text-input');
 const bottomTextInput = document.getElementById('bottom-text-input');
-const canvasElement = document.querySelector('canvas');
-const ctx = canvasElement.getContext('2d');
-
-let imageElement;
 
 // =====> End Global Variables <=====
 // =====> Start Function Declarations <=====
 
 function updateCanvas() {
+  const canvasElement = document.querySelector('canvas');
+  const ctx = canvasElement.getContext('2d');
+
   const { height, width } = imageElement;
   const fontSize = Math.floor(width / 15);
   const topText = topTextInput.value;
@@ -38,14 +36,14 @@ function updateCanvas() {
   ctx.fillStyle = colorInputs[0].value;
   ctx.strokeStyle = colorInputs[1].value;
   ctx.textBaseline = 'top';
-  ctx.strokeText(topText, width / 2, yOffset);
+  ctx.strokeText(topText, width / 2, yOffset); // Must render first
   ctx.fillText(topText, width / 2, yOffset);
 
   // Add bottom text
   ctx.fillStyle = colorInputs[2].value;
   ctx.strokeStyle = colorInputs[3].value;
   ctx.textBaseline = 'bottom';
-  ctx.strokeText(bottomText, width / 2, height - yOffset);
+  ctx.strokeText(bottomText, width / 2, height - yOffset); // Must render first
   ctx.fillText(bottomText, width / 2, height - yOffset);
 }
 
@@ -59,6 +57,9 @@ function loadImage(source) {
 // =====> Start Onload Events and Listeners setup <=====
 
 window.onload = () => {
+  const imageInput = document.getElementById('image-input');
+  const exampleImages = document.querySelectorAll('.example-image');
+
   imageInput.addEventListener('change', () => {
     const source = URL.createObjectURL(imageInput.files[0]);
     loadImage(source);
